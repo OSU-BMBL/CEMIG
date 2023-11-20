@@ -4,7 +4,7 @@
 
 CEMIG is a new motif prediction algorithm which takes k-mer as the basic unit, finds motif seeds by introducing hash table and describing the relationship between k-mers constituting motif by using de Bruijn graph model, and then merges and extends among motif seeds, so as to more accurately predict the transcriptional motifs in ATAC-seq data.
 
-![image](overview.png)
+![image](overview.jpg)
 
 Fig. 1. Illustration of the CEMIG framework. (A) Determines the P-values of k-mers in background data utilizing Markov models. (B) Constructs Hamming distance graph (G) and DBG (G_DB) graphs using k-mers. (C) Clusters k-mers on G to form G_C, merging same-cluster k-mers from G_DB. (D) Identifies motifs via path extension in G_C.
 
