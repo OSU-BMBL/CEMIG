@@ -18,7 +18,7 @@ Enter the folder `code` and type `make` then the compiled codes are within the s
 
 ```
 cd code/
-make clean $ make
+make clean && make
 ```
 
 ## Motif Prediction
