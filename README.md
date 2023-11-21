@@ -60,6 +60,7 @@ Finally, based on the number of motif sites in the original and background seque
 | Background Sequence  | c | d | c + d |
 | Column Total  | a + c | b + d | a + b + c + d (=n) |
 
+![](https://cdn.mathpix.com/snip/images/7OzYFlMUq9nXvyP3j0z4_LlHhPcaiIbRmHdULOiW5H4.original.fullsize.png#pic_left=40%x)
 
 ## Parameters
 
