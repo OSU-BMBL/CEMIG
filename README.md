@@ -10,9 +10,9 @@ Figure showns the illustration of the CEMIG framework.
 
 (A) Determines the P-values of *k*-mer in background data utilizing Markov models. 
 
-(B) Constructs Hamming distance graph ($G$) and DBG ($G_DB$) graphs using *k*-mer.
+(B) Constructs Hamming distance graph ($G$) and DBG ($G_(DB)$) graphs using *k*-mer.
 
-(C) Clusters *k*-mera on G to form $G_C$, merging same-cluster *k*-mers from $G_DB$.
+(C) Clusters *k*-mera on $G$ to form $G_C$, merging same-cluster *k*-mers from $G_DB$.
 
 (D) Identifies motifs via path extension in $G_C$.
 
