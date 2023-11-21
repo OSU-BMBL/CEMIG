@@ -12,7 +12,7 @@ Figure showns the illustration of the CEMIG framework.
 
 (B) Constructs Hamming distance graph ($G$) and DBG ($G_{DB}$) graphs using *k*-mer.
 
-(C) Clusters *k*-mera on $G$ to form $G_C$, merging same-cluster *k*-mers from $G_DB$.
+(C) Clusters *k*-mera on $G$ to form $G_C$, merging same-cluster *k*-mers from $G_{DB}$.
 
 (D) Identifies motifs via path extension in $G_C$.
 
