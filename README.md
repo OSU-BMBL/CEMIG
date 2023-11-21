@@ -52,15 +52,15 @@ Then, we use the PWM matrix of the modules found by `CMEIG` to score each site i
 
 Next, the program randomly generates a background sequence of `100` based on the frequency of specific base pairs appearing in the input sequence; Using similar steps as in the first step, scan these background sequences based on motif's PWM. If the score of the fragments reaches or exceeds the threshold, it is considered that the background sequence contains the motif site. Based on this, the number of background sequences containing motif sites is obtained.
 
-Finally, based on the number of motif sites in the original and background sequences, *P*-value was calculated using `Fisher`'s exact test as the enrichment score.
-
 |   | Contain | Not contain | Row Total |
 | ------------- | ------------- | ------------- | ------------- |
 | Input Sequence  | a | b | a + b |
 | Background Sequence  | c | d | c + d |
 | Column Total  | a + c | b + d | a + b + c + d (=n) |
 
-![](https://cdn.mathpix.com/snip/images/7OzYFlMUq9nXvyP3j0z4_LlHhPcaiIbRmHdULOiW5H4.original.fullsize.png#pic_left=40%x)
+Finally, based on the number of motif sites in the original and background sequences, *P*-value was calculated using `Fisher`'s exact test as the enrichment score:
+
+$$p=\frac{\left(\begin{array}{c}a+b \\ a\end{array}\right)\left(\begin{array}{c}c+d \\ c\end{array}\right)}{\left(\begin{array}{c}n \\ a+c\end{array}\right)}=\frac{(a+b) !(c+d) !(a+c) !(b+d) !}{a ! b ! c ! d ! n !}$$
 
 ## Parameters
 
