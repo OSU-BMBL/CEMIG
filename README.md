@@ -41,6 +41,27 @@ For Example:
 ```
 ./cemig -i ../Example/test.fa
 ```
+
+## Enrichment Score
+
+We use the following algorithm to calculate the enrich score for the motif found by `CEMIG`.
+
+Firstly, record the number of site occurrences of a motif in all sequences, for example 2000 times assuming a total of 10000 sequences.
+
+Then, we use the PWM matrix of the modules found by `CMEIG` to score each site in the motif. Every site in motif that appears in any input sequence is recorded, and this step is repeated for all sites and the lowest score is recorded as the threshold.
+
+Next, the program randomly generates a background sequence of `100` based on the frequency of specific base pairs appearing in the input sequence; Using similar steps as in the first step, scan these background sequences based on motif's PWM. If the score of the fragments reaches or exceeds the threshold, it is considered that the background sequence contains the motif site. Based on this, the number of background sequences containing motif sites is obtained.
+
+|   | Contain | Not contain | Row Total |
+| ------------- | ------------- | ------------- | ------------- |
+| Input Sequence  | a | b | a + b |
+| Background Sequence  | c | d | c + d |
+| Column Total  | a + c | b + d | a + b + c + d (=n) |
+
+Finally, based on the number of motif sites in the original and background sequences, *P*-value was calculated using `Fisher`'s exact test as the enrichment score:
+
+$$p=\frac{\left(\begin{array}{c}a+b \\ a\end{array}\right)\left(\begin{array}{c}c+d \\ c\end{array}\right)}{\left(\begin{array}{c}n \\ a+c\end{array}\right)}=\frac{(a+b) !(c+d) !(a+c) !(b+d) !}{a ! b ! c ! d ! n !}$$
+
 ## Parameters
 
 | Option  | Parameter | Description | Default |
