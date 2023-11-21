@@ -60,7 +60,8 @@ Finally, based on the number of motif sites in the original and background seque
 | Background Sequence  | c | d | c + d |
 | Column Total  | a + c | b + d | a + b + c + d (=n) |
 
-$p=\frac{\left(\begin{array}{c}a+b \\ a\end{array}\right)\left(\begin{array}{c}c+d \\ c\end{array}\right)}{\left(\begin{array}{c}n \\ a+c\end{array}\right)}=\frac{(a+b) !(c+d) !(a+c) !(b+d) !}{a ! b ! c ! d ! n !}$
+
+ $$p=\frac{\left(\begin{array}{c}a+b \\ a\end{array}\right)\left(\begin{array}{c}c+d \\ c\end{array}\right)}{\left(\begin{array}{c}n \\ a+c\end{array}\right)}=\frac{(a+b) !(c+d) !(a+c) !(b+d) !}{a ! b ! c ! d ! n !}$$
 
 ## Parameters
 
