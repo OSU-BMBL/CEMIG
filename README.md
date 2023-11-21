@@ -54,6 +54,11 @@ Next, the program randomly generates a background sequence of `100` based on the
 
 Finally, based on the number of motif sites in the original and background sequences, *P*-value was calculated using `Fisher`'s exact test as the enrichment score.
 
+|   | Contain | Not contain | Row Total |
+| ------------- | ------------- | ------------- | ------------- |
+| Input sequence  | a | b | a + b |
+| Background sequence  | c | d | c + d |
+
 ## Parameters
 
 | Option  | Parameter | Description | Default |
