@@ -56,8 +56,8 @@ Finally, based on the number of motif sites in the original and background seque
 
 |   | Contain | Not contain | Row Total |
 | ------------- | ------------- | ------------- | ------------- |
-| Input sequence  | a | b | a + b |
-| Background sequence  | c | d | c + d |
+| Input Sequence  | a | b | a + b |
+| Background Sequence  | c | d | c + d |
 | Column Total  | a + c | b + d | a + b + c + d (=n) |
 
 ## Parameters
