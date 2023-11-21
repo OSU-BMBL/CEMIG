@@ -21,19 +21,29 @@ cd code/
 make clean && make
 ```
 
-## Motif Prediction
+## Motif prediction using CEMIG
 
 ```
 cd code/
-./cemig -i test.fa
+./cemig -i [INPUT_FILE]
 ```
 
-| Arguments                  | Description                                                               |
-| -------------------------- | ------------------------------------------------------------------------- |
-| --InputFile(-I)            | Input file with standard FASTA file format in default                     |
-| --GenomeFile(-G)           | Genome files with standard FASTA file format                              |
-| --OutFileNamePrefix(-O)    | Number of flanking base pairs at each side of peak summit (default is 50) |
-| --Paired-end(-P)           | Whether the input data is paired-end (true in defalut)                    |
-| --MaxMotifs                | Maximum number of output motifs (100 in default)                          |
+For Example:
+
+```
+./cemig -i ../Example/test.fa
+```
+## Parameters
+
+| Option  | Parameter | Description | Default |
+| ------------- | ------------- | ------------- | ------------- |
+| -I  | `inputfile` | Specify input file. | The program uses input file with standard FASTA file format in default.|
+| -O  | `outfile` | Specify the output file prefix name and location. | The program uses the input file path and prefix name as default values. |
+| -P  | `paired-end` | Specify Whether the input data is paired-end. | This flag is set as `TRUE` in default. |
+| -M | `maxmotifs` | Maximum number of output motifs. | The default number is `100`. |  
+| -W | `Width` | Specify `k` value which determines the length of `k`-mer.  | The `k`-mer uses 6-mer in default. This parameter is not recommended to be modified. |
+| -G | `gap` | The maximum number of gaps allowed for the cluster to extend on the path. | The default number is `6`. |  
 
 ## Citation
+Any questions, problems, bugs are welcome and should be dumped to
+Cankun Wang <cankun.wang@osumc.edu>.
