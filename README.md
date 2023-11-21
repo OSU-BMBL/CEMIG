@@ -8,13 +8,13 @@ CEMIG is a new motif prediction algorithm which takes k-mer as the basic unit, f
 
 Figure showns the illustration of the CEMIG framework. 
 
-(A) Determines the P-values of k-mers in background data utilizing Markov models. 
+(A) Determines the P-values of *k*-mers in background data utilizing Markov models. 
 
 (B) Constructs Hamming distance graph (G) and DBG (G_DB) graphs using k-mers.
 
 (C) Clusters k-mers on G to form G_C, merging same-cluster k-mers from G_DB.
 
-(D) Identifies motifs via path extension in G_C.
+(D) Identifies motifs via path extension in $G_C$.
 
 ## Sequence set
 
