@@ -41,7 +41,7 @@ For Example:
 | -O  | `outfile` | Specify the output file prefix name and location. | The program uses the input file path and prefix name as default values. |
 | -P  | `paired-end` | Specify Whether the input data is paired-end. | This flag is set as `TRUE` in default. |
 | -M | `maxmotifs` | Maximum number of output motifs. | The default number is `100`. |  
-| -W | `Width` | Specify `_Italic_k` value which determines the length of `_Italic_k`-mer.  | The `_Italic_k`-mer uses 6-mer in default. This parameter is not recommended to be modified. |
+| -W | `Width` | Specify `*k*` value which determines the length of `*k*`-mer.  | The `*k*`-mer uses 6-mer in default. This parameter is not recommended to be modified. |
 | -G | `gap` | The maximum number of gaps allowed for the cluster to extend on the path. | The default number is `6`. |  
 
 ## Citation
