@@ -41,6 +41,19 @@ For Example:
 ```
 ./cemig -i ../Example/test.fa
 ```
+
+## Enrichment Score
+
+We use the following algorithm to calculate the enrich score for the motif found by `CEMIG`
+
+Firstly, record the number of site occurrences of a motif in all sequences, for example: 2000 times (assuming a total of 10000 sequences).
+
+Then, for each motif, use the PWM (position weight matrix) of the phantom to score each site and record the lowest score as the threshold.
+
+Next, based on the frequency of specific base pairs appearing in the input sequence, a series of background sequences are randomly generated, with a quantity set to `100`; Scan these background sequences using the PWM of the phantom, and if the score of the fragments reaches or exceeds the threshold in step 2, it is considered that the background sequence contains the phantom site. Based on this, the number of background sequences containing motif sites is obtained.
+
+Finally, based on the number of motif sites (2000 and 300) in the original and background sequences, Fisher's exact test was used to calculate *P*-value as the enrichment score.
+
 ## Parameters
 
 | Option  | Parameter | Description | Default |
