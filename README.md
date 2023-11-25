@@ -24,7 +24,7 @@ TESA incorporates a weighted two-stage alignment procedure and a "bookend" model
 
 Initially, `CEMIG` evaluates input sequences (footprints) to determine *k*-mer *P*-values using a Poisson distribution. This is informed by nucleotide frequencies estimated via zero to second-order Markov models.
 
-### 2. Construction of Hamming Distance Graph and $G_{DB}$
+### 2. Construction of Hamming Distance Graph and GDB
 
 `CEMIG` constructs a Hamming distance graph ($G$) and a de Bruijn graph ($G_{DB}$) using *k*-mers. The *k*-mers are sorted by ascending *P*-values and classified into three tiers, which facilitates the construction of the Hamming distance graph and the $G_{DB}$.
 
