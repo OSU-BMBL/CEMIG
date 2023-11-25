@@ -16,6 +16,26 @@ Figure showns the illustration of the `CEMIG` framework.
 
 (D) Identifies motifs via path extension in $G_C$.
 
+## How TESA works
+
+TESA incorporates a weighted two-stage alignment procedure and a "bookend" model to accurately identify DNA binding patterns. The algorithm consists of the following steps:
+
+### 1. *P*-value Calculation for k-mers
+
+Initially, `CEMIG` evaluates input sequences (footprints) to determine *k*-mer *P*-values using a Poisson distribution. This is informed by nucleotide frequencies estimated via zero to second-order Markov models.
+
+### 2. Construction of Hamming Distance Graph and $G_{DB}$
+
+`CEMIG` constructs a Hamming distance graph ($G$) and a de Bruijn graph ($G_{DB}$) using *k*-mers. The *k*-mers are sorted by ascending *P*-values and classified into three tiers, which facilitates the construction of the Hamming distance graph and the $G_{DB}$.
+
+### 3. Detection of k-mer Clusters
+
+`CEMIG` detects *k*-mer clusters through graph clustering on the Hamming distance graph and constructs a secondary directed graph (digraph) by amalgamating vertices from identical clusters in the $G_{DB}$.
+
+### 4. Two-stage alignment
+
+`CEMIG` forecasts motifs and their respective lengths by extending paths within the digraph. It employs a greedy algorithm for path extension, starting with an ‘uncovered’ cluster vertex with the highest f(•) value and sequentially adding vertices from edges with maximum weight. This process continues until the path reaches the desired length or three k-mer vertices have been added in the same direction. The starting cluster and other cluster vertices on the path are then considered ‘covered’. `CEMIG` outputs the identified paths and iterates the procedure until all clusters are covered.
+
 ## Sequence set
 
 The sequence set refers to the collection of DNA sequences that are used as input data for motif discovery algorithms. The sequence set is specifically derived from ChIP-seq data or ATAC-seq data. The ChIP-seq data usually includes a narrow peak file in `FASTA` format. For ATAC-seq data, either a narrow peak file or a footprint file in `FASTA` format is used as input for the `CEMIG` algorithm to identify DNA binding motifs.
