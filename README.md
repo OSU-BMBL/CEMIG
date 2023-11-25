@@ -18,7 +18,7 @@ Figure showns the illustration of the `CEMIG` framework.
 
 ## How CEMIG works
 
-TESA incorporates a weighted two-stage alignment procedure and a "bookend" model to accurately identify DNA binding patterns. The algorithm consists of the following steps:
+`CEMIG` framework encompasses four stages:
 
 ### 1. *P*-value calculation for *k*-mers
 
