@@ -16,7 +16,7 @@ Figure showns the illustration of the `CEMIG` framework.
 
 (D) Identifies motifs via path extension in $G_C$.
 
-## How TESA works
+## How CEMIG works
 
 TESA incorporates a weighted two-stage alignment procedure and a "bookend" model to accurately identify DNA binding patterns. The algorithm consists of the following steps:
 
