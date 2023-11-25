@@ -20,19 +20,19 @@ Figure showns the illustration of the `CEMIG` framework.
 
 TESA incorporates a weighted two-stage alignment procedure and a "bookend" model to accurately identify DNA binding patterns. The algorithm consists of the following steps:
 
-### 1. *P*-value Calculation for *k*-mers
+### 1. *P*-value calculation for *k*-mers
 
 Initially, `CEMIG` evaluates input sequences (footprints) to determine *k*-mer *P*-values using a Poisson distribution. This is informed by nucleotide frequencies estimated via zero to second-order Markov models.
 
-### 2. Construction of Hamming Distance Graph and GDB
+### 2. Construction of hamming distance graph and de Bruijn graph
 
 `CEMIG` constructs a Hamming distance graph ($G$) and a de Bruijn graph ($G_{DB}$) using *k*-mers. The *k*-mers are sorted by ascending *P*-values and classified into three tiers, which facilitates the construction of the Hamming distance graph and the $G_{DB}$.
 
-### 3. Detection of *k*-mer Clusters
+### 3. Detection of *k*-mer clusters
 
 `CEMIG` detects *k*-mer clusters through graph clustering on the Hamming distance graph and constructs a secondary directed graph (digraph) by amalgamating vertices from identical clusters in the $G_{DB}$.
 
-### 4. Two-stage alignment
+### 4. Motif identification
 
 `CEMIG` forecasts motifs and their respective lengths by extending paths within the digraph. It employs a greedy algorithm for path extension, starting with an ‘uncovered’ cluster vertex with the highest f(•) value and sequentially adding vertices from edges with maximum weight. This process continues until the path reaches the desired length or three *k*-mer vertices have been added in the same direction. The starting cluster and other cluster vertices on the path are then considered ‘covered’. `CEMIG` outputs the identified paths and iterates the procedure until all clusters are covered.
 
