@@ -84,6 +84,8 @@ And *P*-value was calculated using `Fisher`'s exact test accompanied by the enri
 
 $$p=\frac{\left(\begin{array}{c}a+b \\ a\end{array}\right)\left(\begin{array}{c}c+d \\ c\end{array}\right)}{\left(\begin{array}{c}n \\ a+c\end{array}\right)}=\frac{(a+b) !(c+d) !(a+c) !(b+d) !}{a ! b ! c ! d ! n !}$$
 
+Both the enrichment scores and *P*-values will be output together with motif in the output file with `MEME` format.
+
 ## Parameters
 
 | Option  | Parameter | Description | Default |
